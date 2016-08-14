@@ -1,4 +1,4 @@
-package hdt4;
+
 import java.util.Scanner;
 import static java.lang.System.*;
 
@@ -34,6 +34,7 @@ public class Factory {
 			case 3:
 				StackAbstractList Objeto2 = new StackAbstractList();
 				Objeto2.mensaje();
+				Objeto2.getListas().FabricarLista();
 				Imp = Objeto2;
 				validador = 4;
 				break;
