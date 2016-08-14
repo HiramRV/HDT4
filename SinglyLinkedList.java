@@ -136,7 +136,10 @@ public class SinglyLinkedList<E> implements IList<E>
 	@Override
 	public void add(E value) {
 		// TODO Auto-generated method stub
-		
+		Node E = new Node(value,null);
+		head.setNext(E);
+		count++;
+	
 	}
 
 	@Override
