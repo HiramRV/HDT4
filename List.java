@@ -1,5 +1,11 @@
 import java.util.Scanner;
 import static java.lang.System.*;
+/**
+*List, clase encargada de crear un objeto del tipo de implementacion de lista a realizar
+*@version: 2.0
+*@author: Steven Rubio, 15044 // Andrea Pena 15127
+*@since 2016-08-15
+*/
  
 public abstract class List<E> implements IList<E> {
 
