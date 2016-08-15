@@ -1,3 +1,9 @@
+/**
+*Factory, clase encargada de crear un objeto del tipo de implementacion a utilizar
+*@version: 2.0
+*@author: Steven Rubio, 15044 // Andrea Pena 15127
+*@since 2016-08-15
+*/
 
 import java.util.Scanner;
 import static java.lang.System.*;
@@ -79,7 +85,7 @@ public class Factory {
 						validador2 = 4;
 						break;
 					case 3:
-						DoublyLinkedList<Object> Objeto2 = new DoublyLinkedList<Object>();	
+						DoubleLinkedList<Object> Objeto2 = new DoubleLinkedList<Object>();	
 						Lst = Objeto2;
 						System.out.println("DoubleLinkedList");
 						validador2 = 4;
