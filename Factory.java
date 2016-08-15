@@ -1,6 +1,12 @@
 
 import java.util.Scanner;
 import static java.lang.System.*;
+/**
+*Factory, clase encargada de crear un objeto del tipo de implementacion a utilizar
+*@version: 2.0
+*@author: Steven Rubio, 15044 // Andrea Pena 15127
+*@since 2016-08-15
+*/
 
 public class Factory {
 	
