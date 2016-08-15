@@ -13,9 +13,10 @@ public class Calculadora implements I_Calculadora{
 	private Stack miPila;
 	private String operaciones;
 	private String string="";
+	private Factory factory= new Factory();
 	
 	public Calculadora(){
-		this.miPila = new StackList();
+		this.miPila = factory.FabricarObjeto();
 		//*this.operaciones = "2 2 + 3 * ";
 		
 	}

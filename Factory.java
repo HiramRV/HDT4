@@ -5,7 +5,7 @@ import static java.lang.System.*;
 public class Factory {
 	
 
-	public Object FabricarObjeto(){
+	public Stack FabricarObjeto(){
 		Scanner implementacion = new Scanner(System.in);
 		int tipoImp = 0;
 		int validador = 0;
@@ -21,20 +21,20 @@ public class Factory {
 			switch (tipoImp){
 			case 1:
 				StackArrayList Objeto = new StackArrayList();
-				Objeto.mensaje();
+				//Objeto.mensaje();
 				Imp = Objeto;
 				validador = 4;
 				break;
 			case 2:
 				StackVector Objeto1 = new StackVector();
-				Objeto1.mensaje();
+				//Objeto1.mensaje();
 				Imp = Objeto1;
 				validador = 4;
 				break;
 			case 3:
-				StackAbstractList Objeto2 = new StackAbstractList();
-				Objeto2.mensaje();
-				Objeto2.getListas().FabricarLista();
+				StackList Objeto2 = new StackList();
+				//Objeto2.mensaje();
+				//Objeto2.getListas().FabricarLista();
 				Imp = Objeto2;
 				validador = 4;
 				break;
@@ -48,7 +48,7 @@ public class Factory {
 		}	
 		
 	}
-		return Imp;
+		return (Stack) Imp;
 
 	}
 }
