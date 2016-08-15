@@ -1,49 +1,51 @@
-package hdt4;
 
-/**
- * 
- */
+public class DoubleNode<E> extends Node<E>{
 
-/**
- * @author flaquitqm
- *
- */
-public class DoubleNode<E> extends Node<E> {
-
-	private DoubleNode<E> prevElement;
+	protected E data;
+	protected DoubleNode<E> nextElement;
+	protected DoubleNode<E> prevElement;
 	
-	
-	/**
-	 * @param value: el valor del nodo
-	 */
-	public DoubleNode(E value) {
-		super(value);
-		prevElement = null;
-	} 
-	
-	/**
-	 * @param value: el valor del nodo
-	 * @param next: el enlace al próximo nodo
-	 * @param prev: el enlace al nodo anterior
-	 */
-	public DoubleNode(E value, DoubleNode<E> next, DoubleNode<E>prev){
-		super(value, next);
-		prevElement = prev;
+	public DoubleNode(E v, DoubleNode<E> next, DoubleNode<E> prev)
+	{
+		super(v,next);
+		/*data= v;
+		nextElement= next;*/
+		if(nextElement != null)
+		{
+			nextElement.prevElement= this;
+		}
+		prevElement= prev;
+		if(prevElement != null)
+		{
+			prevElement.nextElement= this;
+		}
 	}
 	
-	/**
-	 * @return el elemento anterior
-	 */
-	public DoubleNode<E> getPrevElemenet() {
-		return prevElement;
+	public DoubleNode(E v)
+	{
+		this(v,null,null);
 	}
-
 	
-	/**
-	 * @param prevElemenet: Agrega el elemento siguiente.
-	 */
-	public void setPrevElemenet(DoubleNode<E> prevElemenet) {
-		this.prevElement = prevElemenet;
+	public void setPrev(DoubleNode<E> prev)
+	// post: sets reference to new next value
+	{
+	    prevElement= prev;
 	}
+	
+    public DoubleNode<E> previous()
+    // post: returns reference to next value in list
+	{
+	    return prevElement;
+	}
+    public DoubleNode<E> next()
+    // post: returns reference to next value in list
+    {
+       return nextElement;
+    }
 
+    public void setNext(DoubleNode<E> next)
+    // post: sets reference to new next value
+    {
+       nextElement = next;
+    }
 }

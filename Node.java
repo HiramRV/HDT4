@@ -1,5 +1,3 @@
-package hdt4;
-
 /**
  * @author Estructura de Datos
  * @version 0.0
@@ -9,6 +7,22 @@ package hdt4;
  */
 public class Node<E>
 {
+   public E getData() {
+		return data;
+	}
+
+	public void setData(E data) {
+		this.data = data;
+	}
+
+	public Node<E> getNextElement() {
+		return nextElement;
+	}
+
+	public void setNextElement(Node<E> nextElement) {
+		this.nextElement = nextElement;
+	}
+
    protected E data; // value stored in this element
    protected Node<E> nextElement; // ref to next
 

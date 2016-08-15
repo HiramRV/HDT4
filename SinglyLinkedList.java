@@ -1,5 +1,3 @@
-package hdt4;
-
 import java.util.Iterator;
 
 /**
@@ -10,9 +8,9 @@ import java.util.Iterator;
  * Implementa una lista enlazada
  * 
  */
-public class SinglyLinkedList<E> implements IList<E>
+public class SinglyLinkedList<E> extends List<E>
 {
-	protected int count; // list size
+	
 	protected Node<E> head; // ref. to first element
 
 	public SinglyLinkedList()
@@ -23,24 +21,13 @@ public class SinglyLinkedList<E> implements IList<E>
 	}
 
 	@Override
-	public int size() {
-		// TODO Auto-generated method stub
-		return count;
-	}
-
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return count==0;
-	}
-
-	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-		
+		head= null;
+		count=0;
 	}
 
-	@Override
+	/*@Override
 	public void addFirst(E value){
 		// post: value is added to beginning of list
 		// note order that things happen:
@@ -78,17 +65,7 @@ public class SinglyLinkedList<E> implements IList<E>
 	@Override
 	public E getLast() {
 		// TODO Auto-generated method stub
-		Node<E> newNode = new Node<E>(null); //creates the new node
-		if (head != null){
-			Node<E> finger = head;
-			while (finger.next() != null){
-				finger = finger.next();
-			}
-			return (E) finger;
-		}else{
-			return null;	
-		}
-		
+		return null;
 	}
 
 	@Override
@@ -131,30 +108,52 @@ public class SinglyLinkedList<E> implements IList<E>
 		}
 		else
 			return null; //didn't find it
-	}
-
+	}*/
 	@Override
 	public void add(E value) {
 		// TODO Auto-generated method stub
-		Node E = new Node(value,null);
-		head.setNext(E);
+		Node<E> newNode = new Node<E>(value, null); //creates the new node
+		if (head != null){
+			Node<E> finger = head;
+			while (finger.next() != null){
+				finger = finger.next();
+			}
+			finger.setNext(newNode);
+		}
+		else
+			head = newNode;
 		count++;
-	
 	}
 
 	@Override
 	public E remove() {
 		
-		return null;
+		Node<E> finger = head;
+		Node<E> prev = null;
+		while (finger.next() != null)
+		{
+			prev= finger;
+			finger= finger.next();
+		}
+		if (prev == null)
+		{
+			head= null;
+		}
+		else
+		{
+			prev.setNext(null);
+		}
+		count --;
+		return finger.value();
 	}
 
-	@Override
+	/*@Override
 	public E get() {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}*/
 
-	@Override
+	/*@Override
 	public boolean contains(E value) {
 		// pre: value is not null
 		// post: returns true iff value is found in list
@@ -165,9 +164,6 @@ public class SinglyLinkedList<E> implements IList<E>
 	}
 
 	
-	/* (non-Javadoc)
-	 * @see IList#indexOf(java.lang.Object)
-	 */
 	@Override
 	public int indexOf(E value) {
 		  int indexOF = 0;
@@ -175,7 +171,7 @@ public class SinglyLinkedList<E> implements IList<E>
 		  
 		  while (finger !=null)
 		  { 
-		    if (finger.equals(value))
+		    if (finger.value().equals(value))
 		    {
 		      return indexOF;
 		    }
@@ -190,7 +186,21 @@ public class SinglyLinkedList<E> implements IList<E>
 	@Override
 	public int lastIndexOf(E value) {
 		// TODO Auto-generated method stub
-		return 0;
+		int indexOF = 0;
+		int ind=-1;
+		  Node<E> finger = head;
+		  
+		  while (finger !=null)
+		  { 
+		    if (finger.value().equals(value))
+		    {
+		       ind= indexOF;
+		    }
+		    
+		    indexOF++;
+		    finger = finger.next();
+		  }
+		 return ind;
 	}
 
 	@Override
@@ -221,7 +231,7 @@ public class SinglyLinkedList<E> implements IList<E>
 	public Iterator<E> iterator() {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}*/
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
@@ -236,7 +246,6 @@ public class SinglyLinkedList<E> implements IList<E>
 		}
 		return cadena;
 	}
-	
 	
 
 }

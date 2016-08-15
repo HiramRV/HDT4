@@ -1,11 +1,11 @@
-import java.util.ArrayList;
 
-
-public class StackArrayList extends Stack{
-	private ArrayList<Object> vector1;
+public class StackList extends Stack{
 	
-	public StackArrayList(){
-		vector1 = new ArrayList<Object>();
+
+private List<Object> vector1;
+	
+	public StackList(){
+		vector1 = new CircularList<Object>();
 		vector1.add(0);
 		
 	}
@@ -35,9 +35,7 @@ public class StackArrayList extends Stack{
 	 * @return Object Regresa el ultimo objeto almacenado en la pila
 	 */
 	public Object pop() {
-		Object t = vector1.toArray()[vector1.size()-1];
-		vector1.remove(vector1.size()-1);
-		return t;
+		return vector1.remove();
 	}
 
 	/**
@@ -49,14 +47,13 @@ public class StackArrayList extends Stack{
 		return vector1.isEmpty();
 	}
 
+
 	/**
 	 * Metodo get, sirve para obtener acceso a un atributo
 	 * @param no recibe
 	 * @return Regressa un valor especifico, en este caso null 
 	 */
 	public Object get() {
-		Object t = vector1.get(vector1.size()-2);
-		return t;
+		return vector1.remove();
 		}
-
 }

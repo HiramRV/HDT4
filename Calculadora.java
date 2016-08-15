@@ -12,9 +12,10 @@ public class Calculadora implements I_Calculadora{
 
 	private Stack miPila;
 	private String operaciones;
+	private String string="";
 	
 	public Calculadora(){
-		this.miPila = new Stack();
+		this.miPila = new StackList();
 		//*this.operaciones = "2 2 + 3 * ";
 		
 	}
@@ -27,6 +28,7 @@ public class Calculadora implements I_Calculadora{
 	 * @return int regresa el resutlado de la operaciones
 	 */
 	public int calcular(String vector) {
+	
 		for(int posicion=0;posicion<vector.length();posicion++)
 		{
 			String caracter=vector.substring(posicion,posicion+1);
@@ -34,7 +36,7 @@ public class Calculadora implements I_Calculadora{
 					{
 					int intcaracter = Integer.parseInt(caracter);
 					miPila.push(intcaracter);
-					/**System.out.println("Numero");*/
+					//System.out.println("Numero"+intcaracter);
 					}
 				if (caracter.equals("*") )
 					{
@@ -42,14 +44,18 @@ public class Calculadora implements I_Calculadora{
 					int numero2= (int)miPila.pop();
 					int intresultado=(numero1*numero2);
 					miPila.push(intresultado);
+					string=string+"Multiplicación: "+numero2+"*"+numero1+"="+intresultado+"\n";
+					//System.out.println(string);
 					}
 					
 				if (caracter.equals("/") )
 					{
 					int numero1=(int)miPila.pop();
 					int numero2=(int)miPila.pop();
-					int intresultado=(numero1/numero2);
+					int intresultado=(numero2/numero1);
 					miPila.push(intresultado);
+					string=string+"División: "+numero2+"/"+numero1+"="+intresultado+"\n";
+					//System.out.println(string);
 					}
 				
 				if (caracter.equals("+") )
@@ -58,14 +64,18 @@ public class Calculadora implements I_Calculadora{
 					int numero2=(int)miPila.pop();
 					int intresultado=(numero1+numero2);
 					miPila.push(intresultado);
+					string=string+"Suma: "+numero2+"+"+numero1+"="+intresultado+"\n";
+					//System.out.println(string);
 					}
 					
 				if (caracter.equals("-") )
 					{
 					int numero1=(int)miPila.pop();
 					int numero2=(int)miPila.pop();
-					int intresultado=(numero1-numero2);
+					int intresultado=(numero2-numero1);
 					miPila.push(intresultado);
+					string=string+"Resta: "+numero2+"-"+numero1+"="+intresultado+"\n";
+					//System.out.println(string);
 					}	
 			
 		}
@@ -115,6 +125,16 @@ public class Calculadora implements I_Calculadora{
 
 	public void setOperaciones(String operaciones) {
 		this.operaciones = operaciones;
+	}
+
+
+	public String getString() {
+		return string;
+	}
+
+
+	public void setString(String string) {
+		this.string = string;
 	}
 
 }
