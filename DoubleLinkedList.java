@@ -1,4 +1,9 @@
-
+/**
+*DoubleNode, Nodo dos referencias
+*@version: 2.0
+*@author: Steven Rubio, 15044 // Andrea Pena 15127
+*@since 2016-08-15
+*/
 public class DoubleLinkedList<E> extends List<E> {
 	
 	protected DoubleNode<E> head;
