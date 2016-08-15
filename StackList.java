@@ -1,22 +1,15 @@
+import java.util.Scanner;
 
 public class StackList extends Stack{
 	
 
 private List<Object> vector1;
-private List<Object> Listas;
+private Factory factory= new Factory();
 	
 	public StackList(){
-		vector1 = Listas.FabricarLista();
+		vector1= factory.FabricarLista();
 		vector1.add(0);
 		
-	}
-
-	public List getListas() {
-		return Listas;
-	}
-
-	public void setListas(List listas) {
-		Listas = listas;
 	}
 	
 	 /**
@@ -65,7 +58,8 @@ private List<Object> Listas;
 	public Object get() {
 		return vector1.remove();
 		}
+
+	}
 	
 
 	
-}
