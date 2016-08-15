@@ -3,11 +3,20 @@ public class StackList extends Stack{
 	
 
 private List<Object> vector1;
+private List<Object> Listas;
 	
 	public StackList(){
-		vector1 = new CircularList<Object>();
+		vector1 = Listas.FabricarLista();
 		vector1.add(0);
 		
+	}
+
+	public List getListas() {
+		return Listas;
+	}
+
+	public void setListas(List listas) {
+		Listas = listas;
 	}
 	
 	 /**
@@ -56,4 +65,7 @@ private List<Object> vector1;
 	public Object get() {
 		return vector1.remove();
 		}
+	
+
+	
 }

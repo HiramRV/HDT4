@@ -12,6 +12,8 @@ public class Factory {
 		Object Imp;
 		Imp = new Object();
 		while(validador <= 3){
+		System.out.println(" ");
+		System.out.println(" ");
 		System.out.println("Seleccione el numero del tipo de clase a Implementar ");
 		System.out.println("1. ArrayList	");
 		System.out.println("2. Vector 		");
@@ -20,29 +22,28 @@ public class Factory {
 			tipoImp = implementacion.nextInt();
 			switch (tipoImp){
 			case 1:
+				System.out.println("ArrayList");
 				StackArrayList Objeto = new StackArrayList();
-				//Objeto.mensaje();
 				Imp = Objeto;
 				validador = 4;
 				break;
 			case 2:
 				StackVector Objeto1 = new StackVector();
-				//Objeto1.mensaje();
+				System.out.println("Vector");
 				Imp = Objeto1;
 				validador = 4;
 				break;
 			case 3:
 				StackList Objeto2 = new StackList();
-				//Objeto2.mensaje();
-				//Objeto2.getListas().FabricarLista();
-				Imp = Objeto2;
+				System.out.println("List");
+				Imp = Objeto2.getListas().FabricarLista();
 				validador = 4;
 				break;
 			
 			}
 		}
 		catch(Exception e){
-			System.out.println("Seleccione una opcion coreccta");
+			System.out.println("Seleccione una opcion correcta");
 			System.out.println("");
 			implementacion.nextLine();
 		}	

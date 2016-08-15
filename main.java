@@ -48,7 +48,9 @@ public class main {
 			//String direccion = "ejemplo.txt";
 		
 			String instrucciones = calculadoraPrubea.leerArchivo(direccion);
+			System.out.println(" ");
 			System.out.println(instrucciones);
+			System.out.println(" ");
 			int resultado = calculadoraPrubea.calcular(instrucciones);
 			System.out.println(calculadoraPrubea.getString());
 			System.out.println("El resultado de la operacion es : "+resultado);

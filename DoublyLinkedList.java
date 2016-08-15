@@ -1,60 +1,49 @@
-package hdt4;
 
-/**
- * @author Estructura de Datos
- * @version 0.0
- * @date 09/08/2016
- * @file DoublyLinkedList.java
- * Implementa una lista doblemente enlazada
- * 
- */
-public class DoublyLinkedList<E> {
-	/**
-	 * Atributos
-	 */
-	private DoubleNode<E> head;
-	private DoubleNode<E> tail;
-	private int count;
-
+public class DoublyLinkedList<E> extends List<E> {
 	
-	public DoublyLinkedList(DoubleNode<E> head, DoubleNode<E> tail, int count) {
-		this.head = head;
-		this.tail = tail;
-		this.count = count;
-	}
-
-
-	public DoublyLinkedList() {
-		count = 0;
-		head = null; 
-		tail = null;
-	}
-
-
-
-	public DoubleNode<E> getHead() {
-		return head;
+	protected DoubleNode<E> head;
+	protected DoubleNode<E> tail;
+	
+	public DoublyLinkedList()
+	{
+		head= null;
+		tail= null;
+		count= 0;
 	}
 	
-	public void setHead(DoubleNode<E> head) {
-		this.head = head;
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		head= null;
+		count=0;
 	}
-	
-	public DoubleNode<E> getTail() {
-		return tail;
+
+	@Override
+	public void add(E value) {
+		// TODO Auto-generated method stub
+		tail= new DoubleNode<E>(value,null,tail);
+		if (head == null)
+		{
+			head= tail;
+		}
+		count++;
 	}
-	
-	public void setTail(DoubleNode<E> tail) {
-		this.tail = tail;
+
+	@Override
+	public E remove() {
+		// TODO Auto-generated method stub
+		DoubleNode<E> temp= tail;
+		tail= tail.previous();
+		if (tail == null)
+		{
+			head=null;
+		}
+		else
+		{
+			tail.setNext(null); 
+		}
+		count--;
+		return temp.value();
 	}
-	
-	public int getCount() {
-		return count;
-	}
-	
-	public void setCount(int count) {
-		this.count = count;
-	}
-	
 
 }
