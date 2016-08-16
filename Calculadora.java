@@ -2,8 +2,8 @@
 /**
 *Calculadora, Esta se encarga de realizar los calculos para mostar el resultado del .txt con las instrucciones
 *@version: 2.0
-*@author: Robbin Woods 15201, Steven Rubio 15044, Erick Bautista 15192
-*@since 2016-07-24
+*@author: Steven Rubio, 15044 // Andrea Pena 15127
+*@since 2016-08-15
 */
 
 import java.io.*;
@@ -15,6 +15,7 @@ public class Calculadora implements I_Calculadora{
 	private String string="";
 	private Factory factory= new Factory();
 	
+	//Constructor
 	public Calculadora(){
 		this.miPila = factory.FabricarObjeto();
 		//*this.operaciones = "2 2 + 3 * ";
@@ -45,7 +46,7 @@ public class Calculadora implements I_Calculadora{
 					int numero2= (int)miPila.pop();
 					int intresultado=(numero1*numero2);
 					miPila.push(intresultado);
-					string=string+"Multiplicación: "+numero2+"*"+numero1+"="+intresultado+"\n";
+					string=string+"MultiplicaciÃ³n: "+numero2+"*"+numero1+"="+intresultado+"\n";
 					//System.out.println(string);
 					}
 					
@@ -55,7 +56,7 @@ public class Calculadora implements I_Calculadora{
 					int numero2=(int)miPila.pop();
 					int intresultado=(numero2/numero1);
 					miPila.push(intresultado);
-					string=string+"División: "+numero2+"/"+numero1+"="+intresultado+"\n";
+					string=string+"DivisiÃ³n: "+numero2+"/"+numero1+"="+intresultado+"\n";
 					//System.out.println(string);
 					}
 				
@@ -111,29 +112,56 @@ public class Calculadora implements I_Calculadora{
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+ 	 * Metodo Get
+ 	 * @param No necesita
+ 	 * @return Objeto tipo miPila
+ 	 */
 	public Stack getMiPila() {
 		return miPila;
 	}
 
+	/**
+ 	 * Metodo Set
+ 	 * @param un objeto de tipo miPila
+ 	 * @return no aplica
+ 	 */
 	public void setMiPila(Stack miPila) {
 		this.miPila = miPila;
 	}
 
+	/**
+ 	 * Este metodo retorna las operaciones realizadas en la calculadora
+ 	 * @param No necesita
+ 	 * @return String con las operaciones realizadas por la calculadora
+ 	 */
 	public String getOperaciones() {
 		return operaciones;
 	}
 
+	/**
+ 	 * Este metodo establace las operaciones a realizar en la calculadora
+ 	 * @param String con las operaciones a realizar
+ 	 * @return no aplica
+ 	 */
 	public void setOperaciones(String operaciones) {
 		this.operaciones = operaciones;
 	}
 
-
+	/**
+ 	 * GetString
+ 	 * @param No necesita
+ 	 * @return String del atributo de la clase
+ 	 */
 	public String getString() {
 		return string;
 	}
 
-
+	/**
+ 	 *SetString 
+ 	 * @param El String que se guardara como atributo 
+ 	 * @return No necesita
+ 	 */
 	public void setString(String string) {
 		this.string = string;
 	}
