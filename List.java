@@ -12,11 +12,21 @@ public abstract class List<E> implements IList<E> {
 	protected int count; // list size
 	
 	@Override
+	/**
+ 	 * Metodo para obtener la cantidad de elementos en la lista
+ 	 * @param no necesita
+ 	 * @return int, la cantidad de objetos en la lista
+ 	 */
 	public int size() {
 		return count;
 	}
 
 	@Override
+	/**
+ 	 * Metodo para saber si una lista esta vacia o no
+ 	 * @param no necesita
+ 	 * @return boolean, true si la lista esta vacia, false si no lo esta
+ 	 */
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
 		return count==0;
