@@ -6,11 +6,11 @@
 */
 public class DoublyLinkedList<E> extends List<E> {
 	
-	protected DoubleNode<E> head;
-	protected DoubleNode<E> tail;
+	private DoubleNode<E> head;
+	private DoubleNode<E> tail;
 	
 	/**
- 	 * Constructor: crea lista vacía 
+ 	 * Constructor: crea lista vacÃ­a 
  	 * @param ninguno
  	 */
 	public DoublyLinkedList()
@@ -21,7 +21,7 @@ public class DoublyLinkedList<E> extends List<E> {
 	}
 	
 	/**
- 	 * Este metodo vacía la lista
+ 	 * Este metodo vacÃ­a la lista
  	 * @param ninguno
  	 * @return no regresa nada
  	 */
@@ -33,8 +33,8 @@ public class DoublyLinkedList<E> extends List<E> {
 	}
 
 	/**
- 	 * Este metodo añade un elemento al final de la lista
- 	 * @param value: contenido del elemento a añadir
+ 	 * Este metodo aÃ±ade un elemento al final de la lista
+ 	 * @param value: contenido del elemento a aÃ±adir
  	 * @return no regresa nada
  	 */
 	@Override
