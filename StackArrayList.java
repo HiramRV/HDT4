@@ -1,3 +1,10 @@
+/**
+*StackArrayList, Esta se comporta como un repositorio para almacenar los datos ingresados a la calculadora, Utilizando un ArrayList
+*@version: 3.0
+*@author: Steven Rubio, 15044 // Andrea Pena 15127
+*@since 2016-08-15
+*/
+
 import java.util.ArrayList;
 
 
@@ -13,7 +20,7 @@ public class StackArrayList extends Stack{
 	 /**
 	 * Este metodo se utiliza para obtener la cantidad de elementos que hay en la pila
 	 * @param no necesita
-	 * @return el tamaño de la pila
+	 * @return el tamaÃ±o de la pila
 	 */
 	public int size(){
 		return vector1.size();
