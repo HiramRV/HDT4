@@ -5,8 +5,6 @@
 *@since 2016-08-15
 */
 
-
-import java.util.*;
 public abstract class Stack implements I_Stack{
 	
 	public void push(Object t)
