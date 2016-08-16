@@ -85,7 +85,7 @@ public class Factory {
 						validador2 = 4;
 						break;
 					case 3:
-						DoubleLinkedList<Object> Objeto2 = new DoubleLinkedList<Object>();	
+						DoublyLinkedList<Object> Objeto2 = new DoublyLinkedList<Object>();	
 						Lst = Objeto2;
 						System.out.println("DoubleLinkedList");
 						validador2 = 4;
