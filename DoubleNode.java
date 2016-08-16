@@ -10,6 +10,12 @@ public class DoubleNode<E> extends Node<E>{
 	private DoubleNode<E> nextElement;
 	private DoubleNode<E> prevElement;
 	
+	
+	/**
+ 	 * Constructor con parametros
+ 	 * @param v, objeto a almacenar en el nodo. Next, nodo siguiente a este Nodo. Prev, nodo anterior a este nodo
+ 	 * @return Objeto tipo DoubleNode
+ 	 */
 	public DoubleNode(E v, DoubleNode<E> next, DoubleNode<E> prev)
 	{
 		super(v,next);
@@ -25,7 +31,11 @@ public class DoubleNode<E> extends Node<E>{
 			prevElement.nextElement= this;
 		}
 	}
-	
+	/**
+ 	 * Constructor Sin parametros
+ 	 * @param no necesita
+ 	 * @return Objeto tipo DoubleNode
+ 	 */
 	public DoubleNode(E v)
 	{
 		this(v,null,null);
