@@ -10,7 +10,11 @@ import static java.lang.System.*;
 
 public class Factory {
 	
-
+	/**
+ 	 * Este metodo crea un objeto tipo Stack (para utilización diseño Factory)
+ 	 * @param ninguno
+ 	 * @return objeto tipo Stack
+ 	 */
 	public Stack FabricarObjeto(){
 		Scanner implementacion = new Scanner(System.in);
 		int tipoImp = 0;
@@ -59,6 +63,11 @@ public class Factory {
 
 	}
 	
+	/**
+ 	 * Este metodo crea un objeto tipo Lista para utilizarlo en StackList
+ 	 * @param ninguno
+ 	 * @return objeto tipo List
+ 	 */
 	public List<Object> FabricarLista(){
 			Scanner Sc = new Scanner(System.in);
 			int tipoLst = 0;

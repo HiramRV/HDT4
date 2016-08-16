@@ -9,6 +9,10 @@ public class DoublyLinkedList<E> extends List<E> {
 	protected DoubleNode<E> head;
 	protected DoubleNode<E> tail;
 	
+	/**
+ 	 * Constructor: crea lista vacía 
+ 	 * @param ninguno
+ 	 */
 	public DoublyLinkedList()
 	{
 		head= null;
@@ -16,6 +20,11 @@ public class DoublyLinkedList<E> extends List<E> {
 		count= 0;
 	}
 	
+	/**
+ 	 * Este metodo vacía la lista
+ 	 * @param ninguno
+ 	 * @return no regresa nada
+ 	 */
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
@@ -23,6 +32,11 @@ public class DoublyLinkedList<E> extends List<E> {
 		count=0;
 	}
 
+	/**
+ 	 * Este metodo añade un elemento al final de la lista
+ 	 * @param value: contenido del elemento a añadir
+ 	 * @return no regresa nada
+ 	 */
 	@Override
 	public void add(E value) {
 		// TODO Auto-generated method stub
@@ -34,6 +48,11 @@ public class DoublyLinkedList<E> extends List<E> {
 		count++;
 	}
 
+	/**
+ 	 * Este metodo elimina y retorna el ultimo elemento de la lista
+ 	 * @param ninguno
+ 	 * @return contenido del elemento eliminado
+ 	 */
 	@Override
 	public E remove() {
 		// TODO Auto-generated method stub

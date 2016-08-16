@@ -13,6 +13,10 @@ public class SinglyLinkedList<E> extends List<E>
 	
 	protected Node<E> head; // ref. to first element
 
+	/**
+ 	 * Constructor: crea lista vacía 
+ 	 * @param ninguno
+ 	 */
 	public SinglyLinkedList()
 	// post: generates an empty list
 	{
@@ -20,6 +24,11 @@ public class SinglyLinkedList<E> extends List<E>
 		count = 0;
 	}
 
+	/**
+ 	 * Este metodo vacía la lista
+ 	 * @param ninguno
+ 	 * @return no regresa nada
+ 	 */
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
@@ -27,88 +36,11 @@ public class SinglyLinkedList<E> extends List<E>
 		count=0;
 	}
 
-	/*@Override
-	public void addFirst(E value){
-		// post: value is added to beginning of list
-		// note order that things happen:
-		// head is parameter, then assigned
-		// TODO Auto-generated method stub
-		head = new Node<E>(value,head);
-		count++;
-		
-	}
-
-	@Override
-	public void addLast(E value) {
-		// post: adds value to end of list
-		Node<E> newNode = new Node<E>(value, null); //creates the new node
-		if (head != null){
-			Node<E> finger = head;
-			while (finger.next() != null){
-				finger = finger.next();
-			}
-			finger.setNext(newNode);
-		}
-		else
-			head = newNode;
-		count++;
-		
-	}
-
-	@Override
-	public E getFirst() {
-		// pre: list is not empty
-		// post: returns first value in list
-		return head.value();
-	}
-
-	@Override
-	public E getLast() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public E removeFirst() {
-		// pre: list is not empty
-		// post: removes and returns value from beginning of list
-		Node<E> temp = head;
-		head = head.next();
-		count--;
-		return temp.value();
-	}
-
-	@Override
-	public E removeLast() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public E remove(E value) {
-		// post: removes and returns element equal to value
-		// otherwise returns null
-		Node<E> finger = head;
-		Node<E> previous = null;
-		
-		while (finger.next() != null && !finger.value().equals(value)){
-			previous = finger;
-			finger = finger.next();
-		}
-		
-		if (finger != null){
-			if (previous == null){
-				head = finger.next();
-			}
-			else{
-				previous.setNext(finger.next());
-			}
-			count--;
-			return finger.value();
-		}
-		else
-			return null; //didn't find it
-	}*/
+	/**
+ 	 * Este metodo añade un elemento al final de la lista
+ 	 * @param value: contenido del elemento a añadir
+ 	 * @return no regresa nada
+ 	 */
 	@Override
 	public void add(E value) {
 		// TODO Auto-generated method stub
@@ -124,7 +56,12 @@ public class SinglyLinkedList<E> extends List<E>
 			head = newNode;
 		count++;
 	}
-
+	
+	/**
+ 	 * Este metodo elimina y retorna el ultimo elemento de la lista
+ 	 * @param ninguno
+ 	 * @return contenido del elemento eliminado
+ 	 */
 	@Override
 	public E remove() {
 		
@@ -146,106 +83,5 @@ public class SinglyLinkedList<E> extends List<E>
 		count --;
 		return finger.value();
 	}
-
-	/*@Override
-	public E get() {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
-
-	/*@Override
-	public boolean contains(E value) {
-		// pre: value is not null
-		// post: returns true iff value is found in list
-		Node<E> finger = head;
-		while (finger != null && !finger.value().equals(value))
-			finger = finger.next();
-		return finger != null;
-	}
-
-	
-	@Override
-	public int indexOf(E value) {
-		  int indexOF = 0;
-		  Node<E> finger = head;
-		  
-		  while (finger !=null)
-		  { 
-		    if (finger.value().equals(value))
-		    {
-		      return indexOF;
-		    }
-		    
-		    indexOF++;
-		    finger = finger.next();
-		  }
-		 return -1;
-	}
-	
-
-	@Override
-	public int lastIndexOf(E value) {
-		// TODO Auto-generated method stub
-		int indexOF = 0;
-		int ind=-1;
-		  Node<E> finger = head;
-		  
-		  while (finger !=null)
-		  { 
-		    if (finger.value().equals(value))
-		    {
-		       ind= indexOF;
-		    }
-		    
-		    indexOF++;
-		    finger = finger.next();
-		  }
-		 return ind;
-	}
-
-	@Override
-	public E get(int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public E set(int i, E o) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void add(int i, E o) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public E remove(int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Iterator<E> iterator() {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		Node<E> finger = head;
-		String cadena = "";
-		while (finger.next() != null){
-			cadena += finger.value()+" ";
-			finger = finger.next();
-		}
-		return cadena;
-	}
-	
 
 }
