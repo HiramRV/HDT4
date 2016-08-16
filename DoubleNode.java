@@ -6,9 +6,9 @@
 */
 public class DoubleNode<E> extends Node<E>{
 
-	protected E data;
-	protected DoubleNode<E> nextElement;
-	protected DoubleNode<E> prevElement;
+	private E data;
+	private DoubleNode<E> nextElement;
+	private DoubleNode<E> prevElement;
 	
 	public DoubleNode(E v, DoubleNode<E> next, DoubleNode<E> prev)
 	{
