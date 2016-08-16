@@ -1,8 +1,8 @@
 /**
-*main-ejecuta el programa utilizando la clase calculadora y sus respectivas interfaces
+*main-ejecuta el programa, utilizando la clase calculadora y sus respectivas interfaces e implementaciones
 *@version: 3.0
-*@author: Robbin Woods 15201, Steven Rubio 15044, Erick Bautista 15192
-*@since 2016-07-24
+*@author: Steven Rubio, 15044 // Andrea Pena 15127
+*@since 2016-08-15
 */
 
 
